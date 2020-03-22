@@ -1,0 +1,30 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: eventrouter
+  namespace: default
+  annotations:
+    fluxcd.io/automated: "false"
+    fluxcd.io/tag.chart-image: semver:~4.0
+spec:
+  releaseName: eventrouter
+  chart:
+    git: ssh://git@github.com/nitinjain999/azure_gitops
+    ref: master
+    path: charts/
+  values:
+    image:
+      repository: gcr.io/heptio-images/eventrouter
+      tag: v0.3
+      pullPolicy: IfNotPresent
+    resources: 
+      limits:
+        cpu: 150m
+        memory: 178Mi
+      requests:
+        cpu: 75m
+        memory: 64Mi
+    rbac:
+      create: true
+    enablePrometheus: true

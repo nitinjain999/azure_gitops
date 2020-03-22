@@ -10,9 +10,9 @@ metadata:
 spec:
   releaseName: eventrouter
   chart:
-    git: ssh://git@github.com/nitinjain999/azure_gitops
-    ref: master
-    path: charts/
+    repository: https://kubernetes-charts.storage.googleapis.com/
+    name: eventrouter
+    version: 0.3.0
   values:
     image:
       repository: gcr.io/heptio-images/eventrouter

@@ -10,9 +10,9 @@ metadata:
 spec:
   releaseName: eventrouter
   chart:
-    git: ssh://git@github.com/nitinjain999/azure_gitops
-    ref: master
-    path: charts/
+    repository: https://acratg.azurecr.io/helm/v1/repo
+    name: eventrouter
+    version: latest
   values:
     image:
       repository: gcr.io/heptio-images/eventrouter

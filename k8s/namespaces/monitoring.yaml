@@ -1,7 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  labels: 
-    name: monitoring1
-    owner: nitin.jain@atg.se
-  name:  monitoring1
